@@ -16,7 +16,7 @@ git clone https://github.com/your_username/pdf-docx-pptx-extractor.git <br>
 2)Set up a Python virtual environment and install dependencies: <br>
 python -m venv env <br>
 source env/bin/activate <br>
-3) insall the required dependencies and then run the main.py file
+3) install the required dependencies and then run the main.py file
 
 
 
