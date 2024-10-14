@@ -1,0 +1,93 @@
+
+Presentation on
+Networks and Networking Devices
+
+Semester - 6
+Course Code - ITITC19
+
+Submitted by
+Siddharth Anand - 2020UIT3131
+
+Security Concerns
+in Recent Trends in Networks
+
+What is Network Security?
+Network security is a smaller subset that falls under the larger umbrella of cybersecurity, and it refers to the practice of preventing unauthorized users from accessing computer networks and their associated devices. 
+It involves physically protecting network servers and devices from external threats, as well as taking steps to secure the digital network.
+ In an age of increasingly sophisticated and frequent cyberattacks, network security matters more now than ever before.
+Common Security Concerns
+Encryption
+Ransomware
+DDoS Attacks
+Insider Threats
+Man-in-the-Middle Attacks
+
+Visit Python's official website
+Encryption Concerns
+Encryption is a double-edged sword. In recent years, organizations have looked to protect sensitive data by scrambling communications, what we know as encryption. “End-to-end encryption” can create a false sense of comfort for consumers, Bloomberg recently reported. 
+The reality is that a hacker can control the device in a variety of ways, including gaining access to the “full discussion regardless of what security precautions are built into the app you are using.” Encryption essentially gives hackers free rein to operate prior to their eventual detection and remediation.
+ Data confidentiality will get compromised.
+
+
+Ransomware
+Network-based ransomware can cripple systems and data. This threat is particularly alarming as it does not rely heavily on the human element to execute and bring an organization to its knees.
+Many times, to be successful with an attack, an active and unpatched workstation and an automated software update are the only set of needs. 
+Data can be compromised or lost altogether on an infected device. And further compounding the problem is the fact that many small to medium-sized businesses do not report ransomware attacks as they occur. The data  might be stolen, deleted or encrypted.
+
+
+
+
+DDos Attacks
+DDoS attacks come at a real cost. The severity and frequency of DDoS attacks have many network managers concerned. Hackers infiltrate organizations by flooding websites and networks with questionable traffic. 
+ Hackers  send multiple requests to a particular network and if the network/server is flooded with requests it might not be available to new users.
+The other channel used is the wide adoption of Internet-of-Things (IoT) technology. IoT widgets with poor security defenses are easy targets.
+Insider Threat Concerns
+Insider threats continue to infect organizations of all sizes. Experts estimate that insider threats are behind roughly 50 percent of data breaches, according to McKinsey & Company. Such incidents are usually driven by financial gain or negligence.
+Though the thought process behind insider threats is gaining popularity within organizations, enterprises may not always be proactive as the majority of network security defenses are configured to protect from external threats.
+
+
+
+Man-In-The-Middle
+A man-in-the-middle (MITM) attack occurs when hackers insert themselves into a two-party transaction. 
+After interrupting the traffic, they can filter and steal data, according to Cisco. MITM attacks often occur when a visitor uses an unsecured public Wi-Fi network. 
+Attackers insert themselves between the visitor and the network, and then use malware to install software and use data maliciously.
+Current Security Concerns
+ Remote Work
+
+ Ransomware
+
+Cloud Services
+Current Alarming Statistics on Network Security
+Cybercriminals can penetrate 93 percent of company networks
+
+
+
+“An attacker's path from external networks to target systems begins with breaching the network perimeter. According to the research, on average, it takes two days to penetrate a company's internal network. Credential compromise is the main route in (71 percent of companies), primarily because of simple passwords being used, including for accounts used for system administration.”
+According to Forbes Magazine, 2022
+Global attacks increased by 28%in the third quarter of 2022 compared to same period in 2021. The average weekly attacks per organization worldwide reached over 1,130
+
+
+
+According to Checkpoint.com, 2022
+Data estimates that distributed denial-of-service (DDoS) attacks will grow to 15.4 million by 2023, more than double the 7.9 million in 2018.
+
+
+
+
+According to Cisco, reported by Fortinet.com
+Prevention of Network Security Threats
+ Identify Your Biggest Network Security Issues
+Apply the Principle of Least Privilege for User Access
+Create Redundancy Within the Network
+Training Employees in Network Security  Best Practices
+Implementing Network Segmentation With Strong Internal Security Layers
+Keep Your Software Up to Date
+
+
+
+
+Conclusion
+It’s an unpleasant truth that businesses must face: Between vulnerabilities and the ever-changing IT landscape, network security risks continue to evolve and underline the need for vigilance.
+To that end, proactive network managers know they should routinely examine their security infrastructure and related best practices and upgrade accordingly.
+
+Thank You!
