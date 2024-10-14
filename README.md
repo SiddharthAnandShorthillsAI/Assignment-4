@@ -1,0 +1,1 @@
+This project delivers a modular Python solution for extracting text, hyperlinks, images, and tables from PDF, DOCX, and PPTX files, while also capturing metadata such as file type, page or slide numbers, font styles, and more. Additionally, it offers functionality to store the extracted data in both local files and a MySQL database.
