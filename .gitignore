@@ -1,9 +1,6 @@
-# Ignore Python bytecode cache
-my_env/
-
-
-# Ignore Python bytecode cache
+# Ignore Python compiled files
 __pycache__/
+*.pyc
 
-
-
+# Ignore virtual environments
+my_env/
