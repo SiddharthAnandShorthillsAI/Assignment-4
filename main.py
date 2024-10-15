@@ -36,9 +36,9 @@ def main():
     Main function that defines file paths and initiates the extraction process for each file type.
     """
     # Define paths to input files and output directories
-    pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
-    docx_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'
-    ppt_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pptx'
+    pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
+    docx_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'
+    ppt_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'
     base_output_folder = 'extracted_output'  # Folder where extracted data will be saved
     db_path = 'extracted_data.db'       # SQLite database file for saving extracted data
 
