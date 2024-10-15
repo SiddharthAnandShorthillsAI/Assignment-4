@@ -1,6 +1,0 @@
-title: PowerPoint Presentation
-author: 
-subject: 
-keywords: 
-created: None
-modified: 2024-10-14 16:07:50

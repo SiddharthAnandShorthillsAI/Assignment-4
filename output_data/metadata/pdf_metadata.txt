@@ -1,2 +1,0 @@
-Title: Sample_docx
-Producer: Skia/PDF m131 Google Docs Renderer

@@ -9,25 +9,21 @@ from file_loader import PDFLoader, DOCXLoader, PPTLoader
 from storage import Storage, StorageSQL
 from unittest import mock
 
-
 class TestStorage(unittest.TestCase):
 
-    def setUp(self):
-        # Setup paths and mock data
+    def setUp(self):         
         self.base_path = 'test_output_data'
         self.db_path = 'test_extracted_data.db'
-        
+
         # Create mock file loaders
         self.pdf_loader = PDFLoader('sample.pdf')
         self.docx_loader = DOCXLoader('sample.docx')
         self.ppt_loader = PPTLoader('sample.pptx')
         
-        # Mock DataExtractor for each file type
         self.pdf_extractor = DataExtractor(self.pdf_loader)
         self.docx_extractor = DataExtractor(self.docx_loader)
         self.ppt_extractor = DataExtractor(self.ppt_loader)
         
-        # Create Storage instances for file and SQL storage
         self.storage_pdf = Storage(self.pdf_extractor, self.base_path)
         self.storage_sql_pdf = StorageSQL(self.pdf_extractor, self.db_path)
 
@@ -38,7 +34,6 @@ class TestStorage(unittest.TestCase):
         self.storage_sql_ppt = StorageSQL(self.ppt_extractor, self.db_path)
 
     def tearDown(self):
-        # Clean up the test output folder and database after tests
         if os.path.exists(self.base_path):
             shutil.rmtree(self.base_path)
         if os.path.exists(self.db_path):
@@ -107,7 +102,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_038_empty_file_handling_pdf(self):
         """Test empty PDF file handling"""
-        empty_file = '/home/shtlp_0041/Desktop/extractionofdata/Emptyfile.docx'
+        empty_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Emptyfile.docx'
         loader = DOCXLoader(empty_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -115,7 +110,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_03_empty_file_handling_pdf(self):
         """Test empty PDF file handling"""
-        empty_file = '/home/shtlp_0041/Desktop/extractionofdata/Emptyfile.pdf'
+        empty_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Emptyfile.pdf'
         loader = PDFLoader(empty_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -168,7 +163,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_088_text_extraction_special_characters(self):
         """Test extraction of text with special characters"""
-        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/special.pdf'
+        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/input/special.pdf'
         loader = PDFLoader(docx_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -176,7 +171,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_08_text_extraction_special_characters(self):
         """Test extraction of text with special characters"""
-        docx_file = 'Document 2.docx'
+        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/input/special.docx'
         loader = DOCXLoader(docx_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -313,9 +308,9 @@ class TestFileProcessing(unittest.TestCase):
         valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'  # PDF containing text
         loader = DOCXLoader(valid_pdf_with_text)
         extractor = DataExtractor(loader)
-        storage = Storage(extractor, 'output_folder')  # Define output folder path
+        storage = Storage(extractor, 'output_folder')  
         
-        storage.save_text()  # Save extracted text to local storage
+        storage.save_text()  
         self.assertTrue(os.path.exists('output_folder/text/docx_text.txt'), msg="Text data should be saved to local storage")
 
     def test_TC_23_save_images_to_local_storage(self):
@@ -331,12 +326,12 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_24_save_links_to_local_storage(self):
         """Test saving extracted hyperlinks to local storage."""
-        valid_pdf_with_links = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'  # PDF containing hyperlinks
+        valid_pdf_with_links = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'  
         loader = PDFLoader(valid_pdf_with_links)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')
         
-        storage.save_links()  # Save links to local storage
+        storage.save_links() 
         self.assertFalse(os.path.exists('output_folder/pdf_links.txt'), msg="Links should be saved to local storage")
 
 

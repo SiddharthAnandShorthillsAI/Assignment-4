@@ -4,54 +4,49 @@ from storage import Storage, StorageSQL
 
 def process_file(loader_class, db_path, base_output_folder):
     """
-    Process a file using the specified loader class, saving extracted data to both a database and the filesystem.
+    Process a file with the specified loader, extracting data and saving it to both a database and the local filesystem.
 
     Args:
         loader_class: An instance of a file loader (PDFLoader, DOCXLoader, or PPTLoader) initialized with the file path.
-        db_path: The path to the SQLite database where data will be stored.
-        base_output_folder: The folder path where extracted data will be saved to the filesystem.
+        db_path: Path to the SQLite database for storing extracted data.
+        base_output_folder: Directory path where extracted data will be saved on the filesystem.
     """
-    # Create an instance of DataExtractor using the provided file loader
     extractor = DataExtractor(loader_class)
     
-    # Initialize SQL storage for saving extracted data to a database
     sql_storage = StorageSQL(extractor, db_path)
     
-    # Save various types of extracted data to the SQL database
-    sql_storage.save_text()          # Save extracted text data
-    sql_storage.save_links()         # Save extracted hyperlinks
-    sql_storage.save_images()        # Save extracted images
-    sql_storage.save_tables()        # Save extracted tables
-    sql_storage.save_metadata()      # Save metadata about the extracted content
-    sql_storage.close()              # Close the database connection
+    sql_storage.save_text()          
+    sql_storage.save_links()         
+    sql_storage.save_images()        
+    sql_storage.save_tables()        
+    sql_storage.save_metadata()      
+    sql_storage.close()              
 
-    # Initialize filesystem storage for saving extracted data to the local filesystem
     fs_storage = Storage(extractor, base_output_folder)
     
-    # Save various types of extracted data to the filesystem
-    fs_storage.save_text()          # Save extracted text data
-    fs_storage.save_links()         # Save extracted hyperlinks
-    fs_storage.save_images()        # Save extracted images
-    fs_storage.save_tables()        # Save extracted tables
-    fs_storage.save_metadata()      # Save metadata about the extracted content
+    fs_storage.save_text()          # Store extracted text locally
+    fs_storage.save_links()         # Store hyperlinks in a local file
+    fs_storage.save_images()        # Store images in the output directory
+    fs_storage.save_tables()        # Store table data locally
+    fs_storage.save_metadata()      # Save metadata information locally
 
 
 def main():
     """
-    Main function to define file paths and output locations, and initiate the processing of each file type.
+    Main function that defines file paths and initiates the extraction process for each file type.
     """
-    # Define file paths for documents and output locations
-    pdf_file = 'Document 2.pdf'
-    docx_file = 'Document 2.docx'
-    ppt_file = 'Document 2.pptx'
-    base_output_folder = 'output_data'  # Output folder for extracted data
-    db_path = 'extracted_data.db'        # Database path for storing extracted data
+    # Define paths to input files and output directories
+    pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+    docx_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'
+    ppt_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pptx'
+    base_output_folder = 'extracted_output'  # Folder where extracted data will be saved
+    db_path = 'extracted_data.db'       # SQLite database file for saving extracted data
 
-    # Process each file type by calling the process_file function with the appropriate loader
+    # Process each file type using the appropriate loader (PDF, DOCX, PPT)
     process_file(PDFLoader(pdf_file), db_path, base_output_folder)
     process_file(DOCXLoader(docx_file), db_path, base_output_folder)
     process_file(PPTLoader(ppt_file), db_path, base_output_folder)
 
-# Check if the script is being run directly and call the main function
+# If the script is executed directly, call the main function to begin processing
 if __name__ == "__main__":
     main()

@@ -1,0 +1,7 @@
+("Visit Python's official website", 'https://www.python.org')
+('Bloomberg recently reported', 'https://www.bloomberg.com/opinion/articles/2019-05-14/whatsapp-hack-shows-end-to-end-encryption-is-pointless')
+('McKinsey & Company. ', 'https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/insider-threat-the-human-element-of-cyberrisk')
+('ata', 'https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html')
+('distributed denial-of-service (DDoS) attacks', 'https://www.fortinet.com/resources/cyberglossary/ddos-attack')
+('network security risks', 'https://www.cimcor.com/blog/10-smart-ways-to-mitigate-overlooked-network-security-risks')
+('related best practices ', 'https://www.cimcor.com/blog/5-network-security-best-practices-implement-2017')
