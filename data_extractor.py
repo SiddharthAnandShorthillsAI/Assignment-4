@@ -102,3 +102,5 @@ Returns:
                         table_data = [[cell.text for cell in row.cells] for row in shape.table.rows]
                         tables.append(table_data)  
         return tables
+
+

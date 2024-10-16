@@ -1,4 +1,3 @@
-
 import unittest
 from unittest.mock import MagicMock
 import os
@@ -139,7 +138,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_05_text_extraction_from_pdf(self):
         """Test text extraction from PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
         loader = PDFLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -147,7 +146,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_06_text_extraction_from_docx(self):
         """Test text extraction from DOCX"""
-        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'
+        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'
         loader = DOCXLoader(docx_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -155,7 +154,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_07_text_extraction_from_ppt(self):
         """Test text extraction from PPT"""
-        ppt_file = 'Document 2.pptx'
+        ppt_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'
         loader = PPTLoader(ppt_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -181,7 +180,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_09_text_extraction_from_multipage_pdf(self):
         """Test extraction of text from multi-page PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
         loader = PDFLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_text = extractor.extract_text()
@@ -197,7 +196,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_10_link_extraction_from_pdf(self):
         """Test link extraction from PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
         loader = PDFLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_links = extractor.extract_links()
@@ -205,7 +204,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_11_link_extraction_from_docx(self):
         """Test link extraction from DOCX"""
-        docx_file = 'Document 2.docx'
+        docx_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'
         loader = DOCXLoader(docx_file)
         extractor = DataExtractor(loader)
         extracted_links = extractor.extract_links()
@@ -213,7 +212,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_12_link_extraction_from_ppt(self):
         """Test link extraction from PPT"""
-        ppt_file = 'Document 2.pptx'
+        ppt_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'
         loader = PPTLoader(ppt_file)
         extractor = DataExtractor(loader)
         extracted_links = extractor.extract_links()
@@ -221,7 +220,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_18_image_extraction_from_pdf(self):
         """Test image extraction from PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
         loader = PDFLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_images = extractor.extract_images()
@@ -229,7 +228,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_18_image_extraction_from_ppt(self):
         """Test image extraction from PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pptx'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'
         loader = PPTLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_images = extractor.extract_images()
@@ -237,7 +236,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_18_image_extraction_from_docs(self):
         """Test image extraction from PDF"""
-        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'
+        pdf_file = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'
         loader = DOCXLoader(pdf_file)
         extractor = DataExtractor(loader)
         extracted_images = extractor.extract_images()
@@ -245,7 +244,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_13_table_extraction_from_pdf(self):
         """Test table extraction from PDF."""
-        valid_pdf_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'  # Sample PDF containing tables
+        valid_pdf_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'  # Sample PDF containing tables
         loader = PDFLoader(valid_pdf_with_tables)
         extractor = DataExtractor(loader)
         tables = extractor.extract_tables()
@@ -254,7 +253,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_14_table_extraction_from_docx(self):
         """Test table extraction from DOCX."""
-        valid_docx_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'  # Sample DOCX with tables
+        valid_docx_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'  # Sample DOCX with tables
         loader = DOCXLoader(valid_docx_with_tables)
         extractor = DataExtractor(loader)
         tables = extractor.extract_tables()
@@ -263,7 +262,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_14_table_extraction_from_ppt(self):
         """Test table extraction from DOCX."""
-        valid_docx_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pptx'  # Sample DOCX with tables
+        valid_docx_with_tables = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'  # Sample DOCX with tables
         loader = PPTLoader(valid_docx_with_tables)
         extractor = DataExtractor(loader)
         tables = extractor.extract_tables()
@@ -272,7 +271,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_20_mixed_content_extraction(self):
         """Test extraction of mixed content (text and images) from a file."""
-        valid_docx_with_mixed_content = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'  # DOCX with both text and images
+        valid_docx_with_mixed_content = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'  # DOCX with both text and images
         loader = DOCXLoader(valid_docx_with_mixed_content)
         extractor = DataExtractor(loader)
         
@@ -285,7 +284,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_229_save_text_to_local_storage(self):
         """Test saving extracted text data to local storage."""
-        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'  # PDF containing text
+        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'  # PDF containing text
         loader = PDFLoader(valid_pdf_with_text)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')  # Define output folder path
@@ -295,7 +294,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_22_sa9ve_text_to_local_storage(self):
         """Test saving extracted text data to local storage."""
-        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pptx'  # PDF containing text
+        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pptx'  # PDF containing text
         loader = PPTLoader(valid_pdf_with_text)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')  # Define output folder path
@@ -305,7 +304,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_22_save_text_to_local_storage(self):
         """Test saving extracted text data to local storage."""
-        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.docx'  # PDF containing text
+        valid_pdf_with_text = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.docx'  # PDF containing text
         loader = DOCXLoader(valid_pdf_with_text)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')  
@@ -315,7 +314,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_23_save_images_to_local_storage(self):
         """Test saving extracted images to local storage."""
-        valid_pdf_with_images = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'
+        valid_pdf_with_images = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'
         loader = PDFLoader(valid_pdf_with_images)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')
@@ -326,7 +325,7 @@ class TestFileProcessing(unittest.TestCase):
 
     def test_TC_24_save_links_to_local_storage(self):
         """Test saving extracted hyperlinks to local storage."""
-        valid_pdf_with_links = '/home/shtlp_0041/Desktop/extractionofdata/Document 2.pdf'  
+        valid_pdf_with_links = '/home/shtlp_0041/Desktop/extractionofdata/input/Document 2.pdf'  
         loader = PDFLoader(valid_pdf_with_links)
         extractor = DataExtractor(loader)
         storage = Storage(extractor, 'output_folder')

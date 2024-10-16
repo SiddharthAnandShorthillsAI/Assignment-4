@@ -1,4 +1,3 @@
-
 from abc import ABC, abstractmethod
 import os
 from pdfminer.high_level import extract_text
@@ -7,22 +6,17 @@ from docx import Document
 from pptx import Presentation
 from pdf2image import convert_from_path
 import pytesseract
-
 # Abstract Class for File Loading
 class FileLoader(ABC):
-    """Abstract class defining the interface for loading various file types."""
-    
+    """Abstract class defining the interface for loading various file types.""" 
     @abstractmethod
     def validate_file(self) -> bool:
         """Verify if the file is valid."""
         pass
-
     @abstractmethod
     def load_file(self):
         """Load the file and retrieve its content."""
         pass
-
-
 # Concrete PDFLoader Class
 class PDFLoader(FileLoader):
     """Implementation of FileLoader specifically for PDF files."""
@@ -136,8 +130,6 @@ class PDFLoader(FileLoader):
         with pdfplumber.open(self.file_path) as pdf:
             metadata = pdf.metadata  # Fetch metadata using pdfplumber
         return metadata
-
-
 # Concrete DOCXLoader Class
 class DOCXLoader(FileLoader):
     """Implementation of FileLoader specifically for DOCX files."""
@@ -189,8 +181,6 @@ class DOCXLoader(FileLoader):
             'modified': core_properties.modified,
         }
         return metadata
-
-
 # Concrete PPTLoader Class
 class PPTLoader(FileLoader):
     """Implementation of FileLoader specifically for PPTX files."""

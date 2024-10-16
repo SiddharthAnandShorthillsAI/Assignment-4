@@ -5,8 +5,6 @@ from io import BytesIO
 from PIL import Image
 from data_extractor import DataExtractor
 from file_loader import PDFLoader, DOCXLoader, PPTLoader
-
-
 class Storage:
     def __init__(self, extractor: DataExtractor, base_path: str):
         self.extractor = extractor
@@ -81,8 +79,6 @@ class Storage:
                 print(f"Successfully saved table {idx + 1} to {csv_path}")
             except Exception as e:
                 print(f"Error saving table {idx + 1}: {e}")
-
-
     def save_metadata(self):
         """Save metadata extracted from the file."""
         if isinstance(self.extractor.file_loader, PDFLoader):
@@ -93,15 +89,12 @@ class Storage:
             metadata = self.extractor.file_loader.extract_metadata()
         else:
             print("Unknown file type. Unable to extract metadata.")
-            return
-        
+            return    
         # Create a directory for metadata if it doesn't exist
         metadata_folder = os.path.join(self.base_path, 'metadata')
-        os.makedirs(metadata_folder, exist_ok=True)
-        
+        os.makedirs(metadata_folder, exist_ok=True)       
         # Save metadata to a file
-        metadata_file = os.path.join(metadata_folder, f'{self._get_file_type()}_metadata.txt')
-        
+        metadata_file = os.path.join(metadata_folder, f'{self._get_file_type()}_metadata.txt')       
         try:
             with open(metadata_file, 'w', encoding='utf-8') as f:
                 for key, value in metadata.items():
@@ -109,8 +102,6 @@ class Storage:
             print(f"Successfully saved metadata to {metadata_file}")
         except Exception as e:
             print(f"Error saving metadata: {e}")
-
-
     def _get_file_type(self):
         """Helper method to get the file type (pdf, docx, ppt) based on the loader class."""
         if isinstance(self.extractor.file_loader, PDFLoader):
@@ -196,9 +187,7 @@ class StorageSQL:
         else:
             print("Unknown file type. Unable to extract metadata.")
             return
-
         file_type = self._get_file_type()
-
         cursor = self.conn.cursor()
         for key, value in metadata.items():
             cursor.execute('''
@@ -230,7 +219,6 @@ class StorageSQL:
 
         self.conn.commit()
         print("Link data saved to database.")
-
 
     def save_images(self):
         images = self.extractor.extract_images()
