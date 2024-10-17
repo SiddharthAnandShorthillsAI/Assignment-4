@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import MagicMock
 import os
 import shutil
-import sqlite3
 from data_extractor import DataExtractor
 from loaders.pdf_loader import PDFLoader
 from loaders.docx_loader import DOCXLoader
