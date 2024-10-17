@@ -7,8 +7,8 @@ from data_extractor import DataExtractor
 from loaders.pdf_loader import PDFLoader
 from loaders.docx_loader import DOCXLoader
 from loaders.ppt_loader import  PPTLoader
-from storage import Storage
-from storage_sql import StorageSQL
+from storage.storage import Storage
+from storage.storage_sql import StorageSQL
 from unittest import mock
 
 class TestStorage(unittest.TestCase):

@@ -2,8 +2,8 @@ from loaders.pdf_loader import PDFLoader
 from loaders.docx_loader import DOCXLoader
 from loaders.ppt_loader import  PPTLoader
 from data_extractor import DataExtractor
-from storage import Storage
-from storage_sql import StorageSQL
+from storage.storage import Storage
+from storage.storage_sql import StorageSQL
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -49,7 +49,7 @@ def main():
     """
     Main function that prompts the user for file paths and initiates the extraction process for each file type.
     """
-    db_path = 'extracted_data.db'       # SQLite database file for saving extracted data
+    db_path = 'extracted_data.db'      
     base_output_folder = 'extracted_output'  # Folder where extracted data will be saved
 
     # Ask user for file paths

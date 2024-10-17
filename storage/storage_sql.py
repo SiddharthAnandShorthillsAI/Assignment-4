@@ -8,7 +8,7 @@ from data_extractor import DataExtractor
 from loaders.pdf_loader import PDFLoader
 from loaders.docx_loader import DOCXLoader
 from loaders.ppt_loader import PPTLoader
-from storage import Storage
+from storage.storage import Storage
 class StorageSQL:
     def __init__(self, extractor: DataExtractor, db_config):
         self.extractor = extractor
