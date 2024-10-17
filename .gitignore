@@ -1,6 +1,12 @@
+/home/shtlp_0041/Desktop/extractionofdata/loaders/__pycache__/
 # Ignore Python compiled files
 __pycache__/
 
 
 # Ignore virtual environments
 my_env/
+
+
+
+.env
+

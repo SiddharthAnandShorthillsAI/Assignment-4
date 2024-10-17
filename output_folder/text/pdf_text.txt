@@ -39,5 +39,3 @@ $6
 the document structure. The goal is to ensure that the Python extraction library is able to parse
 
 multi-page documents and retrieve the correct metadata.
-
-

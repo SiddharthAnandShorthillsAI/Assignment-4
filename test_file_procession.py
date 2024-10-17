@@ -4,8 +4,11 @@ import os
 import shutil
 import sqlite3
 from data_extractor import DataExtractor
-from file_loader import PDFLoader, DOCXLoader, PPTLoader
-from storage import Storage, StorageSQL
+from loaders.pdf_loader import PDFLoader
+from loaders.docx_loader import DOCXLoader
+from loaders.ppt_loader import  PPTLoader
+from storage import Storage
+from storage_sql import StorageSQL
 from unittest import mock
 
 class TestStorage(unittest.TestCase):
@@ -39,13 +42,11 @@ class TestStorage(unittest.TestCase):
             os.remove(self.db_path)
 
 
-
-
 class TestFileProcessing(unittest.TestCase):
 
     def setUp(self):
         """Setup common variables for testing"""
-        self.db_path = 'test_extracted_data.db'  # SQLite DB for test
+        self.db_path = 'test_extracted_data.db' 
         self.base_output_folder = 'test_output_data'  # Filesystem storage for test output
         if not os.path.exists(self.base_output_folder):
             os.mkdir(self.base_output_folder)
@@ -332,8 +333,6 @@ class TestFileProcessing(unittest.TestCase):
         
         storage.save_links() 
         self.assertFalse(os.path.exists('output_folder/pdf_links.txt'), msg="Links should be saved to local storage")
-
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,7 +1,12 @@
-from file_loader import PDFLoader, DOCXLoader, PPTLoader
+from loaders.pdf_loader import PDFLoader
+from loaders.docx_loader import DOCXLoader
+from loaders.ppt_loader import  PPTLoader
 from data_extractor import DataExtractor
-from storage import Storage, StorageSQL
+from storage import Storage
+from storage_sql import StorageSQL
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def process_file(loader_class, db_path, base_output_folder):
     """
@@ -13,8 +18,16 @@ def process_file(loader_class, db_path, base_output_folder):
         base_output_folder: Directory path where extracted data will be saved on the filesystem.
     """
     extractor = DataExtractor(loader_class)
-    
-    sql_storage = StorageSQL(extractor, db_path)
+
+# Get the database config from the environment variables
+    db_config = {
+    'host': os.getenv('host'),
+    'user': os.getenv('user'),
+    'password': os.getenv('password'),
+    'database': os.getenv('database')
+}
+
+    sql_storage = StorageSQL(extractor, db_config)
     
     sql_storage.save_text()          
     sql_storage.save_links()         
@@ -66,7 +79,6 @@ def main():
             print(f"Processed file: {file_path}")
         except Exception as e:
             print(f"Error processing file {file_path}: {e}")
-
 
 # If the script is executed directly, call the main function to begin processing
 if __name__ == "__main__":

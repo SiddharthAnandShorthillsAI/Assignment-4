@@ -1,4 +1,6 @@
-from file_loader import PDFLoader, DOCXLoader, PPTLoader
+from loaders.pdf_loader import PDFLoader
+from loaders.docx_loader import DOCXLoader
+from loaders.ppt_loader import  PPTLoader
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 class DataExtractor:
@@ -102,5 +104,18 @@ Returns:
                         table_data = [[cell.text for cell in row.cells] for row in shape.table.rows]
                         tables.append(table_data)  
         return tables
+    def extract_metadata(self):
+        """
+        Extract metadata from the loaded file.
 
+        Returns:
+            dict: A dictionary containing metadata (e.g., author, title, creation date).
+        """
+        if isinstance(self.file_loader, PDFLoader):
+            return self.file_loader.extract_metadata()  # Extract metadata from a PDF
+        elif isinstance(self.file_loader, DOCXLoader):
+            return self.file_loader.extract_metadata()  # Extract metadata from DOCX
+        elif isinstance(self.file_loader, PPTLoader):
+            return self.file_loader.extract_metadata()  # Extract metadata from PPTX
+        return {}
 
