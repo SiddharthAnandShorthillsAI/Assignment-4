@@ -1,8 +1,6 @@
 import os
 import csv
-import sqlite3
 from io import BytesIO
-import mysql.connector
 from PIL import Image
 from data_extractor import DataExtractor
 from loaders.pdf_loader import PDFLoader

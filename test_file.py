@@ -1,5 +1,4 @@
 import unittest
-from unittest.mock import MagicMock
 import os
 import shutil
 from data_extractor import DataExtractor
@@ -8,7 +7,6 @@ from loaders.docx_loader import DOCXLoader
 from loaders.ppt_loader import  PPTLoader
 from storage.storage import Storage
 from storage.storage_sql import StorageSQL
-from unittest import mock
 
 class TestStorage(unittest.TestCase):
 
