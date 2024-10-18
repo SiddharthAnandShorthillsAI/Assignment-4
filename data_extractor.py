@@ -16,13 +16,9 @@ Initialize the DataExtractor with the specified file loader.
     def extract_links(self):       
         """
 Extracts hyperlinks from the loaded file, based on the file type.
-
-This method handles different file types by delegating the extraction process to the appropriate file loader:
-
 - For PDFs, it calls the `extract_links` method of the PDFLoader.
 - For DOCX documents, it extracts the hyperlink targets from the document relationships.
 - For PPT presentations, it retrieves hyperlinks from the text frames of each slide, returning both the link text and the address.
-
 Returns:
     list: A list of hyperlinks. For PPT files, this list contains tuples in the format (link text, link address).
 """
@@ -60,7 +56,6 @@ Returns:
                 shape.text for slide in self.content.slides for shape in slide.shapes if hasattr(shape, "text")
             )
         return ""
-
 
     def extract_images(self):
         """
@@ -119,3 +114,10 @@ Returns:
             return self.file_loader.extract_metadata()  # Extract metadata from PPTX
         return {}
 
+        """The DataExtractor class abstracts the process
+          of extracting common elements 
+          (links, text, images, tables, and metadata) across
+            different file types (PDF, DOCX, PPTX).
+              It relies on the file loader classes to handle the 
+              specifics of each file format
+        """

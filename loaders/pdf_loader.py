@@ -3,10 +3,11 @@ import os
 from pdfminer.high_level import extract_text
 import pdfplumber
 from pdf2image import convert_from_path
-import pytesseract
+import pytesseract #wrapper for Google's Tesseract-OCR engine, used for optical character recognition
+#(OCR) to extract text from images.
 from loaders.file_loader import FileLoader
 class PDFLoader(FileLoader):
-    """Implementation of FileLoader specifically for PDF files."""
+    """Implementation of FileLoader for PDF files."""
     
     def __init__(self, file_path: str):
         """
@@ -39,9 +40,9 @@ class PDFLoader(FileLoader):
             text = extract_text(self.file_path)
             if text.strip():
                 return text
-            else:
+            else:   #switches to ocr to extract text 
                 print("No text found in PDF using pdfminer; switching to OCR.")
-        except Exception as e:
+        except Exception as e: #if OCR fails then raise exception
             print(f"Error during text extraction with pdfminer: {e}; switching to OCR.")
 
         # Use OCR as a fallback if pdfminer extraction fails
