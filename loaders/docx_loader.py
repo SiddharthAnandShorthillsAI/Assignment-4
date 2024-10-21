@@ -15,9 +15,6 @@ class DOCXLoader(FileLoader):
         self.file_path = file_path
         self.content = None
 
-    def validate_file(self) -> bool:
-        """Check if the provided path points to a valid DOCX file."""
-        return self.file_path.endswith('.docx') and os.path.isfile(self.file_path)
 
     def load_file(self):
         """
@@ -34,21 +31,22 @@ class DOCXLoader(FileLoader):
             return self.content
         raise ValueError("Invalid DOCX file")
     
-    def extract_metadata(self):
-        """Extract metadata from the DOCX file.
+    # def extract_metadata(self):
+    #     """Extract metadata from the DOCX file.
 
-        Returns:
-            dict: A dictionary containing the key metadata properties of the DOCX file.
-        """
-        metadata = {}
-        doc = Document(self.file_path)
-        core_properties = doc.core_properties  # Access the core properties for metadata
-        metadata = {
-            'title': core_properties.title,
-            'author': core_properties.author,
-            'subject': core_properties.subject,
-            'keywords': core_properties.keywords,
-            'created': core_properties.created,
-            'modified': core_properties.modified,
-        }
-        return metadata
+    #     Returns:
+    #         dict: A dictionary containing the key metadata properties of the DOCX file.
+    #     """
+    #     metadata = {}
+    #     doc = Document(self.file_path)
+    #     core_properties = doc.core_properties  # Access the core properties for metadata
+    #     metadata = {
+    #         'title': core_properties.title,
+    #         'author': core_properties.author,
+    #         'subject': core_properties.subject,
+    #         'keywords': core_properties.keywords,
+    #         'created': core_properties.created,
+    #         'modified': core_properties.modified,
+    #     }
+    #     return metadata
+
