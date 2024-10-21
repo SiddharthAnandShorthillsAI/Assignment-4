@@ -30,22 +30,3 @@ class PPTLoader(FileLoader):
             self.content = Presentation(self.file_path)  # Load the content of the PPTX file
             return self.content
         raise ValueError("Invalid PPT file")
-
-    # def extract_metadata(self):
-    #     """Extract metadata from the PPTX file.
-
-    #     Returns:
-    #         dict: A dictionary containing the key metadata properties of the PPTX file.
-    #     """
-    #     metadata = {}
-    #     presentation = Presentation(self.file_path)
-    #     core_properties = presentation.core_properties  # Access the core properties for metadata
-    #     metadata = {
-    #         'title': core_properties.title,
-    #         'author': core_properties.author,
-    #         'subject': core_properties.subject,
-    #         'keywords': core_properties.keywords,
-    #         'created': core_properties.created,
-    #         'modified': core_properties.modified,
-    #     }
-    #     return metadata
