@@ -29,3 +29,5 @@ class PDFLoader(FileLoader):
         """
         if not self.validate_file():
             raise ValueError("Invalid PDF file")
+        
+        return self.file_path

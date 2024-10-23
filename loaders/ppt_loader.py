@@ -1,5 +1,4 @@
 # Concrete PPTLoader Class
-import os
 from pptx import Presentation
 from loaders.file_loader import FileLoader
 class PPTLoader(FileLoader):
