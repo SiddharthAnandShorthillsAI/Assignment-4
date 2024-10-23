@@ -1,5 +1,4 @@
 import os
-import csv
 import mysql.connector
 from abc import ABC, abstractmethod
 from PIL import Image

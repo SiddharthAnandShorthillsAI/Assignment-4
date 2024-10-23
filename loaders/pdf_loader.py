@@ -1,9 +1,5 @@
-import os
 from pdfminer.high_level import extract_text
-import pdfplumber
 from pdf2image import convert_from_path
-import pytesseract #wrapper for Google's Tesseract-OCR engine, used for optical character recognition
-#(OCR) to extract text from images.
 from loaders.file_loader import FileLoader
 class PDFLoader(FileLoader):
     """Implementation of FileLoader for PDF files."""

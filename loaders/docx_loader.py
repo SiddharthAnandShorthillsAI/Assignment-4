@@ -1,5 +1,4 @@
 # Concrete DOCXLoader Class
-import os
 from docx import Document
 from loaders.file_loader import FileLoader
 class DOCXLoader(FileLoader):
